@@ -5,18 +5,27 @@ import init from './init'
 
 import ActiveListings from './views/activeListings'
 import DetailedListings from './views/detailedListings'
-
 import {EtsyCollection} from './models/etsyModels'
 import {EtsyModel} from './models/etsySearchModel'
+import STORE from './store.js'
+
+import AddedListings from './views/addedListings'
 
 var app = function(){
 	var EtsyRouter = Backbone.Router.extend({
 		routes:{
 			'home': 'handleActiveListings',
+			'add': 'handleAddedListings',
 			'search/:query': 'handleEtsySearch',
 			'details/:id': 'handleDetails',
 			'*default': 'handleRedirect'
 		},
+
+		handleAddedListings:function(){
+			ReactDOM.render(<AddedListings listingColl={STORE.data.listingCollection}/>, document.querySelector('.container'))
+		},
+
+
 		handleActiveListings: function(){
 			var collectionInstance = new EtsyCollection()
 			var promise = collectionInstance.fetch({

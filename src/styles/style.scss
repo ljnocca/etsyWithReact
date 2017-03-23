@@ -8,3 +8,24 @@ h1 {
 	text-align: center;
 	color: fuchsia;
 }
+
+.listing_div {
+    border: 1px solid black;
+    margin: 2px;
+    width: 30%;
+    display: inline-block;
+}
+
+img{
+	width: 100%;
+}
+
+a {
+    display: block;
+    text-align: center;
+}
+
+.inputClass {
+    margin: 10px;
+    display: block;
+}

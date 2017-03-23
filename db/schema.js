@@ -15,6 +15,14 @@ const usersSchema = new mongoose.Schema({
 
 })
 
+const listingSchema = new mongoose.Schema({
+	itemName: { type: String, required: true },
+	price: {type: String, required: true},
+	itemDescription: {type: String, required: true},
+	createdAt: { type: Date, default: Date.now }
+})
+
 module.exports = {
-  User: mongoose.model('User', usersSchema)
+  User: mongoose.model('User', usersSchema),
+  Listing: mongoose.model('Listing', listingSchema)
 }

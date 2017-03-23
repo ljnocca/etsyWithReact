@@ -12,8 +12,9 @@ var Banner = React.createClass({
 		return(
 			<div className="banner">
 				<h1>Etsy 2.0</h1>
-				<input type="text" onKeyDown={this._handleKeyDown}/>
-				<a href="#home">home</a>
+				<input type="text" placeholder="search Etsy" onKeyDown={this._handleKeyDown}/>
+				<a href="#home">Home</a>
+				<a href="#add">Add Your own Listing</a>
 			</div>
 			)
 	}
